@@ -1,0 +1,25 @@
+﻿<Window x:Class="Prog5NinjaManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prog5NinjaManager"
+        mc:Ignorable="d" 
+        DataContext="{Binding Main, Source={StaticResource Locator}}"
+        Title="MainWindow" Height="450" Width="800">
+  
+    
+
+    <StackPanel>
+        <TextBlock HorizontalAlignment="Center">Ninja Manager</TextBlock>
+        <WrapPanel>
+            <DataGrid Margin =" 5" ItemsSource="{Binding Ninjas, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedNinja }"   IsReadOnly="True"  ></DataGrid>
+        </WrapPanel>
+        
+        <WrapPanel>
+            <Button Margin="5" Padding="10" Command="{Binding ShowAddNinjaCommand}" Content="Add Ninja">  </Button>
+            <Button Margin="5" Padding="10" Command="{Binding DeleteNinjaCommand}" Content="Delete Ninja"></Button>
+            <Button Margin="5" Padding="10" Command="{Binding DeleteNinjaCommand}" Content="Inventory"/>
+        </WrapPanel>
+    </StackPanel>
+</Window>
